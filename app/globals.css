@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─── */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply font-body text-slate-700 antialiased;
+  background: #F8FAFC;
+  overflow-x: clip;
+}
+h1, h2, h3 {
+  @apply font-head text-navy-950;
+}
+:focus-visible {
+  outline: 2px solid #F98C0F;
+  outline-offset: 3px;
+}
+
+/* ─── Noise grain overlay ─── */
+.noise-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+/* ─── Glass card utility ─── */
+.glass-card {
+  background: rgba(11, 31, 77, 0.55);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ─── Bento tile hover ─── */
+.bento-tile {
+  @apply relative overflow-hidden rounded-3xl transition-all duration-500;
+}
+.bento-tile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s;
+  box-shadow: 0 0 60px rgba(249, 140, 15, 0.2);
+  pointer-events: none;
+}
+.bento-tile:hover::after {
+  opacity: 1;
+}
+.bento-tile:hover {
+  transform: translateY(-6px);
+}
+.bento-tile:hover .bento-bg {
+  transform: scale(1.08);
+}
+.bento-tile:hover .bento-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ─── Scroll reveal ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ─── Custom scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1F4D;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A8A;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F98C0F;
+}
