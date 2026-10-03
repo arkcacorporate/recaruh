@@ -43,16 +43,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${head.variable} ${body.variable}`}>
-      <head>
-        <link
-          rel="preload"
-          as="image"
-          href="/images/hero/step-1.webp"
-          type="image/webp"
-          // @ts-ignore
-          fetchPriority="high"
-        />
-      </head>
       <body className="overflow-x-clip bg-navy-950 text-slate-100 antialiased selection:bg-brand selection:text-navy-950">
         <Navbar />
         <main className="relative">{children}</main>

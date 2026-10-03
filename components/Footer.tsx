@@ -100,6 +100,7 @@ export default function Footer() {
                   alt={logo.alt}
                   width={170}
                   height={52}
+                  style={{ width: "auto" }}
                   className="h-10 w-auto object-contain md:h-12"
                   onError={() => setLogoError(true)}
                 />

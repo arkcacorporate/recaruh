@@ -43,6 +43,7 @@ export default function Navbar() {
               width={180}
               height={56}
               priority
+              style={{ width: "auto" }}
               className="h-10 w-auto object-contain sm:h-11 md:h-14"
               onError={() => setLogoError(true)}
             />
@@ -114,6 +115,7 @@ export default function Navbar() {
                     alt={logo.alt}
                     width={160}
                     height={50}
+                    style={{ width: "auto" }}
                     className="h-10 w-auto object-contain"
                     onError={() => setLogoError(true)}
                   />
