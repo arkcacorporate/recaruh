@@ -96,7 +96,7 @@ export default function Services() {
 
           {/* Right Column: Intro text */}
           <div>
-            <p className="text-base leading-relaxed text-slate-600 lg:text-lg">
+            <p className="text-base leading-relaxed text-slate-800 lg:text-lg">
               RECARUH offers end-to-end talent and HR solutions designed to
               simplify recruitment, automate HR operations, manage compliance,
               and streamline onboarding.
@@ -123,7 +123,7 @@ export default function Services() {
                   delay: prefersReducedMotion ? 0 : idx * 0.08,
                   ease: "easeOut",
                 }}
-                className={`group flex flex-col justify-between rounded-3xl border border-slate-900/[0.06] bg-white shadow-[0_10px_40px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)] ${
+                className={`group flex flex-col justify-between rounded-3xl border border-slate-200/90 bg-white shadow-[0_10px_40px_rgba(15,23,42,0.06)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)] ${
                   isStaggered ? "lg:translate-y-10" : ""
                 }`}
               >
@@ -171,7 +171,7 @@ export default function Services() {
                         {s.title}
                       </h3>
                     </div>
-                    <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                    <p className="mt-3 text-sm leading-relaxed text-slate-800">
                       {s.text}
                     </p>
                   </div>
@@ -198,7 +198,7 @@ export default function Services() {
               return (
                 <article
                   key={s.title}
-                  className="flex min-w-[85vw] snap-center flex-col justify-between rounded-3xl border border-slate-900/[0.06] bg-white shadow-[0_10px_35px_rgba(15,23,42,0.07)]"
+                  className="flex min-w-[85vw] snap-center flex-col justify-between rounded-3xl border border-slate-200/90 bg-white shadow-[0_10px_35px_rgba(15,23,42,0.07)]"
                 >
                   {/* Photo container */}
                   <div className="p-3 pb-0">
@@ -239,7 +239,7 @@ export default function Services() {
                         {s.title}
                       </h3>
                     </div>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-600">
+                    <p className="mt-2 text-xs leading-relaxed text-slate-800">
                       {s.text}
                     </p>
                     <div className="mt-4 h-0.5 w-full bg-brand/30" />

@@ -92,24 +92,29 @@ export default function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:py-16 md:grid-cols-2 lg:grid-cols-4">
         {/* Brand Column with Logo */}
         <div>
-          <Link href="/" className="inline-block focus:outline-none" aria-label="RECARUH Home">
+          <Link
+            href="/"
+            className="group flex flex-shrink-0 items-center focus:outline-none"
+            aria-label="RECARUH Home"
+          >
             {!logoError ? (
-              <div className="inline-block rounded-xl bg-white px-3.5 py-2.5 shadow-md transition-transform hover:scale-105">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={170}
-                  height={52}
-                  style={{ width: "auto" }}
-                  className="h-10 w-auto object-contain md:h-12"
-                  onError={() => setLogoError(true)}
-                />
-              </div>
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={180}
+                height={56}
+                priority
+                style={{ width: "auto" }}
+                className="h-10 w-auto object-contain sm:h-11 md:h-14"
+                onError={() => setLogoError(true)}
+              />
             ) : (
-              <p className="font-head text-2xl font-extrabold text-white md:text-3xl">
+              <span className="font-head text-2xl font-extrabold tracking-tight text-white md:text-3xl">
                 RECA
-                <span className="text-brand">RUH</span>
-              </p>
+                <span className="text-brand transition-colors group-hover:text-brand-light">
+                  RUH
+                </span>
+              </span>
             )}
           </Link>
           <p className="mt-4 text-sm leading-relaxed text-white/70">

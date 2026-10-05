@@ -129,11 +129,11 @@ export const serviceImages: Record<string, ImageItem> = {
 export const aboutImages = {
   about1: {
     id: "about-1",
-    title: "RECARUH Office",
-    localPath: "/images/about/about-1.webp",
+    title: "Creative Team at Work",
+    localPath: "/images/about/creative-people-working-office.jpg",
     remoteUrl:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=75",
-    alt: "Modern RECARUH office workspace in Kolkata",
+    alt: "Creative professionals collaborating in modern RECARUH office workspace",
   },
   about2: {
     id: "about-2",
