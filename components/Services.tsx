@@ -147,7 +147,7 @@ export default function Services() {
                         alt={s.title}
                         fill
                         sizes="(max-width: 1024px) 50vw, 33vw"
-                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-106"
+                        className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                         onError={() =>
                           setImgErrors((prev) => ({ ...prev, [idx]: true }))
                         }

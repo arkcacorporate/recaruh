@@ -120,20 +120,20 @@ export default function Hero() {
 
   // Preload background images 2 to 6 when idle
   useEffect(() => {
-    const schedule = () => {
-      if ("requestIdleCallback" in window) {
-        (window as any).requestIdleCallback(() => setIdleLoaded(true), {
-          timeout: 1500,
-        });
-      } else {
-        setTimeout(() => setIdleLoaded(true), 800);
-      }
-    };
-    if (document.readyState === "complete") {
-      schedule();
+    if (typeof window === "undefined") return;
+    if ("requestIdleCallback" in window) {
+      const handle = (window as any).requestIdleCallback(
+        () => setIdleLoaded(true),
+        { timeout: 1000 }
+      );
+      return () => {
+        if ("cancelIdleCallback" in window) {
+          (window as any).cancelIdleCallback(handle);
+        }
+      };
     } else {
-      window.addEventListener("load", schedule, { once: true });
-      return () => window.removeEventListener("load", schedule);
+      const timer = setTimeout(() => setIdleLoaded(true), 500);
+      return () => clearTimeout(timer);
     }
   }, []);
 
@@ -234,9 +234,9 @@ export default function Hero() {
       className="relative h-[500vh] md:h-[600vh]"
     >
       {/* ── Inner Sticky Viewport: Fixed on screen, fits in 100svh ── */}
-      <div className="sticky top-0 h-[100svh] min-h-[560px] w-full overflow-clip bg-navy-950">
+      <div className="sticky top-0 h-[100svh] min-h-[560px] w-full overflow-clip bg-navy-950 isolate">
         {/* ── Background Photo Stack ── */}
-        <div className="absolute inset-0 -z-30 overflow-clip">
+        <div className="absolute inset-0 z-0 overflow-clip">
           {heroImages.map((img, idx) => {
             const isActive = activeStep === idx;
             const hasError = imgErrors[idx];
@@ -262,7 +262,7 @@ export default function Hero() {
                     priority={idx === 0}
                     // @ts-ignore
                     fetchPriority={idx === 0 ? "high" : "auto"}
-                    loading={idx === 0 ? "eager" : "eager"}
+                    loading={idx === 0 ? "eager" : "lazy"}
                     sizes="100vw"
                     quality={70}
                     placeholder={idx === 0 ? "blur" : "empty"}
@@ -286,7 +286,7 @@ export default function Hero() {
 
         {/* ── Directional Gradient Overlay (Lighter, lets photo breathe) ── */}
         <div
-          className="absolute inset-0 -z-20 pointer-events-none"
+          className="absolute inset-0 z-10 pointer-events-none"
           style={{
             background:
               "linear-gradient(90deg, rgba(11,31,77,0.82) 0%, rgba(11,31,77,0.55) 38%, rgba(11,31,77,0.18) 70%, rgba(11,31,77,0.05) 100%)",
@@ -295,7 +295,7 @@ export default function Hero() {
 
         {/* ── Soft bottom fade for service card reading ── */}
         <div
-          className="absolute inset-x-0 bottom-0 h-[30%] -z-20 pointer-events-none"
+          className="absolute inset-x-0 bottom-0 h-[30%] z-10 pointer-events-none"
           style={{
             background:
               "linear-gradient(to top, rgba(11,31,77,0.35) 0%, transparent 100%)",
@@ -303,10 +303,12 @@ export default function Hero() {
         />
 
         {/* ── Glassy Floating Chips (XL screens only, far right) ── */}
-        <FloatingChips />
+        <div className="relative z-20">
+          <FloatingChips />
+        </div>
 
         {/* ── Main Hero Content Wrapper (Compact, fits in 100svh, pt-[92px]) ── */}
-        <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-5 pt-[92px] pb-6 md:pt-[96px]">
+        <div className="relative z-20 mx-auto flex h-full max-w-7xl flex-col justify-center px-5 pt-[92px] pb-6 md:pt-[96px]">
           <div className="flex flex-1 flex-col justify-between lg:flex-row lg:items-center lg:gap-10">
             {/* Left Column: Headline, Subtext, Buttons, Step Card */}
             <div className="flex max-w-3xl flex-col justify-center">

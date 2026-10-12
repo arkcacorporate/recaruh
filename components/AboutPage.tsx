@@ -50,7 +50,7 @@ export default function AboutPage() {
             <motion.div {...rv()} className="relative mx-auto w-full max-w-md lg:max-w-none">
               <div aria-hidden className="absolute -bottom-4 -right-4 h-full w-full rounded-t-[10rem] rounded-b-2xl border border-brand sm:-bottom-6 sm:-right-6" />
               <div className="relative aspect-[4/5] overflow-hidden rounded-t-[10rem] rounded-b-2xl shadow-2xl shadow-navy-950/20">
-                <motion.div initial={{ scale: 1.15 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.6, ease: "easeOut" }} className="absolute inset-0"><Photo src="/images/about/story.jpg" alt="A handshake over a resume, closing a successful placement" sizes="(min-width:1024px) 45vw, 90vw" /></motion.div>
+                <motion.div initial={{ scale: 1.15 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.6, ease: "easeOut" }} className="absolute inset-0"><Photo src="/images/about/story.webp" alt="A handshake over a resume, closing a successful placement" sizes="(min-width:1024px) 45vw, 90vw" /></motion.div>
               </div>
               <p className="absolute -left-2 bottom-10 rounded-full bg-navy-950 px-5 py-2.5 text-xs font-semibold uppercase tracking-widest text-white shadow-xl sm:-left-6">Trust · Commitment · Transparency</p>
             </motion.div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
             <motion.div {...rv()} className="group relative mx-auto w-full max-w-sm lg:max-w-none">
               <div aria-hidden className="absolute -left-4 -top-4 h-full w-full rounded-t-full rounded-b-3xl border border-navy-800/30 sm:-left-6 sm:-top-6" />
               <div className="relative aspect-[3/4] overflow-hidden rounded-t-full rounded-b-3xl shadow-2xl shadow-navy-950/25">
-                <div className="absolute inset-0 transition duration-700 group-hover:scale-105"><Photo src="/images/about/founder.jpg" alt="Sunaina Shaw, Founder of RECARUH" sizes="(min-width:1024px) 40vw, 85vw" /></div>
+                <div className="absolute inset-0 transition duration-700 group-hover:scale-105"><Photo src="/images/about/founder.webp" alt="Sunaina Shaw, Founder of RECARUH" sizes="(min-width:1024px) 40vw, 85vw" /></div>
               </div>
             </motion.div>
             <div className="relative">

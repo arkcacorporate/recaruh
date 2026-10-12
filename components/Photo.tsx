@@ -28,14 +28,16 @@ export default function Photo({
   }
 
   return (
-    <Image
-      src={src}
-      alt={alt}
-      fill
-      sizes={sizes}
-      priority={priority}
-      onError={() => setError(true)}
-      className={`h-full w-full object-cover ${className}`}
-    />
+    <div className="relative h-full w-full">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
+        onError={() => setError(true)}
+        className={`h-full w-full object-cover ${className}`}
+      />
+    </div>
   );
 }

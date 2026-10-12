@@ -130,7 +130,7 @@ export const aboutImages = {
   about1: {
     id: "about-1",
     title: "Creative Team at Work",
-    localPath: "/images/about/creative-people-working-office.jpg",
+    localPath: "/images/about/creative-people-working-office.webp",
     remoteUrl:
       "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=75",
     alt: "Creative professionals collaborating in modern RECARUH office workspace",

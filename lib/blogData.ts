@@ -71,7 +71,7 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: "Sunaina Shaw",
       role: "Founder & Talent Strategist",
-      avatar: "/images/about/founder.jpg",
+      avatar: "/images/about/founder.webp",
       bio: "Leading talent strategy and workforce modernization across corporate India, Sunaina specializes in bringing transparency and efficiency to recruitment systems.",
     },
     featuredImage: "/images/services/ai-candidate-selection.webp",
@@ -359,7 +359,7 @@ export const blogPosts: BlogPost[] = [
     author: {
       name: "Sunaina Shaw",
       role: "Founder & Talent Strategist",
-      avatar: "/images/about/founder.jpg",
+      avatar: "/images/about/founder.webp",
       bio: "Leading talent strategy and workforce modernization across corporate India, Sunaina specializes in bringing transparency and efficiency to recruitment systems.",
     },
     featuredImage: "/images/services/campus-hiring.webp",
@@ -446,7 +446,7 @@ export const blogPosts: BlogPost[] = [
       avatar: "/images/about/about-2.webp",
       bio: "Former corporate recruitment director who has coached over 1,200 professionals into high-impact roles across fintech, enterprise SaaS, and multinational corporations.",
     },
-    featuredImage: "/images/about/creative-people-working-office.jpg",
+    featuredImage: "/images/about/creative-people-working-office.webp",
     featuredImageAlt: "Corporate HR governance team discussing statutory compliance dashboards",
     tags: ["Compliance", "Payroll", "HR Tech", "Statutory Governance"],
     tableOfContents: [
@@ -529,7 +529,7 @@ export const blogPosts: BlogPost[] = [
       avatar: "/images/about/about-1.webp",
       bio: "Certified talent development professional with a decade of expertise architecting high-conversion resumes for tech, healthcare, and finance leaders.",
     },
-    featuredImage: "/images/about/story.jpg",
+    featuredImage: "/images/about/story.webp",
     featuredImageAlt: "Modern professionals collaborating on strategic business initiatives in contemporary workspace",
     tags: ["Upskilling", "Career Growth", "Future of Work", "Leadership"],
     tableOfContents: [
